@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1'], function () {
     Route::match(['get', 'post'], 'clientes', "api\\v1\ClientesController@index");
+    Route::match(['get', 'post'], 'clientes/nuevo', "api\\v1\ClientesController@create");
 });
 
