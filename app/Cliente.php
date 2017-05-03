@@ -15,8 +15,7 @@ class Cliente extends Model
         'ApellidoPaterno',
         'ApellidoMaterno',
         'Direccion',
-        'Telefono',
-        'IdCliente'
+        'Telefono'
         ];
     
     /**
