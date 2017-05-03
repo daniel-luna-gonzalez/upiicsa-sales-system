@@ -11,10 +11,9 @@ class ClientesController extends Controller {
     protected $validateNew = array(
         "Nombre" => "string|required",
         "ApellidoPaterno" => "string|required",
-        "ApellidoMaterno" => "string|required",
+        "ApellidoMaterno" => "string",
         "Direccion" => "string",
         "Telefono" => "string",
-        "IdCliente" => "integer"
     );
 
     public function index() {
