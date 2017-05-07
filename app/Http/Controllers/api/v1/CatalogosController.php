@@ -1,38 +1,25 @@
 <?php
 
 namespace App\Http\Controllers\api\v1;
-
-use App\Pagos;
+use App\Catalogos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PagosController extends Controller {
-
+class CatalogosController extends Controller
+{
     protected $validateNew = array(
-        'Cliente' => 'string',
-        'IdCliente' => 'integer',
-        'Fecha' => 'date',
-        'Monto' => 'float',
-        'Dia' => 'integer',
-        'Mes' => 'integer',
-        'Anio' => 'integer'
+        'Catalogo' => 'string',
     );
     protected $validateUpdate = array(
         "IDREG" => "integer|required|min:0",
-         'Cliente' => 'string',
-        'IdCliente' => 'integer',
-        'Fecha' => 'date',
-        'Monto' => 'float',
-        'Dia' => 'integer',
-        'Mes' => 'integer',
-        'Anio' => 'integer'
+        'Catalogo' => 'string',
     );
     protected $validateDelete = array(
         "IDREG" => "integer|required|min:1",
     );
 
     public function index() {
-        return Pagos::all();
+        return Catalogos::all();
     }
 
     public function create(Request $request) {
@@ -40,7 +27,7 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            return Pagos::create($request->all());
+            return Catalogos::create($request->all());
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }
@@ -51,14 +38,14 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
 
-            $pago = Pagos::find($request->get("IDREG"));
+            $catalogo = Catalogos::find($request->get("IDREG"));
 
-            if (!count($pago) > 0)
-                return response()->json(["status" => false, "message" => "No se encontró el pago a actualizar"]);
+            if (!count($catalogo) > 0)
+                return response()->json(["status" => false, "message" => "No se encontró el catálogo a actualizar"]);
 
-            $pago->update($request->all());
+            $catalogo->update($request->all());
 
-            return response()->json(["status" => true, "message" => "Pago actualizada"]);
+            return response()->json(["status" => true, "message" => "Catálogo actualizado"]);
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }
@@ -69,14 +56,14 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $pago = Pagos::find($request->get("IDREG"));
+            $catalogo = Catalogos::find($request->get("IDREG"));
 
-            if (!count($pago) > 0)
-                return response()->json(["status" => false, "message" => "No se encontró el pago a eliminar"]);
+            if (!count($catalogo) > 0)
+                return response()->json(["status" => false, "message" => "No se encontró el catálogo a eliminar"]);
 
-            $pago->delete();
+            $catalogo->delete();
 
-            return response()->json(["status" => true, "message" => "Pago eliminado con éxito"]);
+            return response()->json(["status" => true, "message" => "Catálogo eliminado con éxito"]);
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }

@@ -2,37 +2,43 @@
 
 namespace App\Http\Controllers\api\v1;
 
-use App\Pagos;
+use App\Cambios;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PagosController extends Controller {
+class CambiosController extends Controller {
 
     protected $validateNew = array(
         'Cliente' => 'string',
         'IdCliente' => 'integer',
-        'Fecha' => 'date',
-        'Monto' => 'float',
-        'Dia' => 'integer',
-        'Mes' => 'integer',
-        'Anio' => 'integer'
+        'Catalogo' => 'string',
+        'Pagina' => 'integer',
+        'Marca' => 'string',
+        'ID' => 'integer',
+        'Numero' => 'float',
+        'Costo' => 'float',
+        'Precio' => 'float',
+        'IDREGVenta' => 'integer'
     );
     protected $validateUpdate = array(
         "IDREG" => "integer|required|min:0",
-         'Cliente' => 'string',
+        'Cliente' => 'string',
         'IdCliente' => 'integer',
-        'Fecha' => 'date',
-        'Monto' => 'float',
-        'Dia' => 'integer',
-        'Mes' => 'integer',
-        'Anio' => 'integer'
+        'Catalogo' => 'string',
+        'Pagina' => 'integer',
+        'Marca' => 'string',
+        'ID' => 'integer',
+        'Numero' => 'float',
+        'Costo' => 'float',
+        'Precio' => 'float',
+        'IDREGVenta' => 'integer'
     );
     protected $validateDelete = array(
         "IDREG" => "integer|required|min:1",
     );
 
     public function index() {
-        return Pagos::all();
+        return Cambios::all();
     }
 
     public function create(Request $request) {
@@ -40,7 +46,7 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            return Pagos::create($request->all());
+            return Cambios::create($request->all());
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }
@@ -51,14 +57,14 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
 
-            $pago = Pagos::find($request->get("IDREG"));
+            $cambios = Cambios::find($request->get("IDREG"));
 
-            if (!count($pago) > 0)
-                return response()->json(["status" => false, "message" => "No se encontró el pago a actualizar"]);
+            if (!count($cambios) > 0)
+                return response()->json(["status" => false, "message" => "No se encontró el cambio a actualizar"]);
 
-            $pago->update($request->all());
+            $cambios->update($request->all());
 
-            return response()->json(["status" => true, "message" => "Pago actualizada"]);
+            return response()->json(["status" => true, "message" => "Cambio actualizado"]);
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }
@@ -69,14 +75,14 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $pago = Pagos::find($request->get("IDREG"));
+            $cambio = Cambios::find($request->get("IDREG"));
 
-            if (!count($pago) > 0)
-                return response()->json(["status" => false, "message" => "No se encontró el pago a eliminar"]);
+            if (!count($cambio) > 0)
+                return response()->json(["status" => false, "message" => "No se encontró el cambio a eliminar"]);
 
-            $pago->delete();
+            $cambio->delete();
 
-            return response()->json(["status" => true, "message" => "Pago eliminado con éxito"]);
+            return response()->json(["status" => true, "message" => "Cambio eliminado con éxito"]);
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }
