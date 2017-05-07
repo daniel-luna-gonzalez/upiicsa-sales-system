@@ -24,7 +24,7 @@ class CatalogosController extends Controller
 
     public function create(Request $request) {
         try {
-            if (!($validate = $this->validateRequest($request, $this->validateDelete)))
+            if (!($validate = $this->validateRequest($request, $this->validateNew)))
                 return $validate;
 
             return Catalogos::create($request->all());
