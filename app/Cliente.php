@@ -9,7 +9,9 @@ class Cliente extends Model
     protected $table = "Clientes";
     
     public $timestamps = false;
-    
+    protected $primaryKey = "IDREG";
+
+
     protected $fillable = [
         'Nombre',
         'ApellidoPaterno',

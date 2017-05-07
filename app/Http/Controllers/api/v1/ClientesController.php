@@ -17,7 +17,7 @@ class ClientesController extends Controller {
     );
     
     protected $validateUpdate = array(
-        "id"    => "integer|required|min:0",
+        "IDREG"    => "integer|required|min:0",
         "Nombre" => "string|",
         "ApellidoPaterno" => "string|",
         "ApellidoMaterno" => "string",
@@ -26,11 +26,9 @@ class ClientesController extends Controller {
     );
     
     protected $validateDelete = array(
-        "id" => "integer|required|min:1",
+        "IDREG" => "integer|required|min:1",
     );
     
-    
-
     public function index() {
         return Cliente::all();
     }
@@ -50,10 +48,14 @@ class ClientesController extends Controller {
         try {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
-
-            $cliente = Cliente::find($request->get("id"));
+            
+            $cliente = Cliente::find($request->get("IDREG"));
+                 
             if(!count($cliente) > 0)
                 return response ()->json (["status" => false, "message" => "No se encontró el cliente a actualizar"]);
+            
+            $cliente->update($request->all());
+                        
             return response()->json(["status" => true, "message" => "Cliente actualizado"]);
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
@@ -65,9 +67,11 @@ class ClientesController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $cliente = Cliente::find($request->get("id"));
+            $cliente = Cliente::find($request->get("IDREG"));
             if(!count($cliente) > 0)
                 return response ()->json (["status" => false, "message" => "No se encontró el cliente a eliminar"]);
+            
+            $cliente->delete();
             
             return response()->json(["status" => true, "message" => "Cliente eliminado con éxito"]);
         } catch (\Exception $e) {
