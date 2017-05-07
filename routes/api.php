@@ -29,5 +29,15 @@ Route::group(['prefix' => 'v1'], function () {
     Route::match(['get', 'post'], 'ventas/eliminar/', "api\\v1\VentasController@eliminar");
     Route::match(['get', 'post'], 'ventas/actualizar', "api\\v1\VentasController@actualizar");
     
+    Route::match(['get', 'post'], 'marcas', "api\\v1\MarcasController@index");
+    Route::match(['get', 'post'], 'marcas/nuevo', "api\\v1\MarcasController@create");
+    Route::match(['get', 'post'], 'marcas/eliminar/', "api\\v1\MarcasController@eliminar");
+    Route::match(['get', 'post'], 'marcas/actualizar', "api\\v1\MarcasController@actualizar");
+    
+    Route::match(['get', 'post'], 'pagos', "api\\v1\PagosController@index");
+    Route::match(['get', 'post'], 'pagos/nuevo', "api\\v1\PagosController@create");
+    Route::match(['get', 'post'], 'pagos/eliminar/', "api\\v1\PagosController@eliminar");
+    Route::match(['get', 'post'], 'pagos/actualizar', "api\\v1\PagosController@actualizar");
+    
 });
 
