@@ -12,7 +12,7 @@ class PagosController extends Controller {
         'Cliente' => 'string',
         'IdCliente' => 'integer',
         'Fecha' => 'date',
-        'Monto' => 'float',
+        'Monto' => 'numeric',
         'Dia' => 'integer',
         'Mes' => 'integer',
         'Anio' => 'integer'
@@ -22,7 +22,7 @@ class PagosController extends Controller {
          'Cliente' => 'string',
         'IdCliente' => 'integer',
         'Fecha' => 'date',
-        'Monto' => 'float',
+        'Monto' => 'numeric',
         'Dia' => 'integer',
         'Mes' => 'integer',
         'Anio' => 'integer'

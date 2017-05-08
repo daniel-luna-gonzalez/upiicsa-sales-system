@@ -28,9 +28,9 @@ class VentasController extends Controller {
         'Pagina' => 'integer',
         'Marca' => 'string',
         'ID' => 'integer|required',
-        'Numero' => 'float',
+        'Numero' => 'numeric',
         'Costo' => 'integer',
-        'Precio' => 'float',
+        'Precio' => 'numeric',
         'Entregado' => 'integer',
         'Ubicacion' => 'string'
     );
@@ -42,9 +42,9 @@ class VentasController extends Controller {
         'Catalogo' => 'string',
         'Pagina' => 'integer',
         'Marca' => 'string',
-        'Numero' => 'float',
+        'Numero' => 'numeric',
         'Costo' => 'integer',
-        'Precio' => 'float',
+        'Precio' => 'numeric',
         'Entregado' => 'integer',
         'Ubicacion' => 'string'
     );

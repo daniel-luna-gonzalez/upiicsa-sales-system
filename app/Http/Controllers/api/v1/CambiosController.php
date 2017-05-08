@@ -15,9 +15,9 @@ class CambiosController extends Controller {
         'Pagina' => 'integer',
         'Marca' => 'string',
         'ID' => 'integer',
-        'Numero' => 'float',
-        'Costo' => 'float',
-        'Precio' => 'float',
+        'Numero' => 'numeric',
+        'Costo' => 'numeric',
+        'Precio' => 'numeric',
         'IDREGVenta' => 'integer'
     );
     protected $validateUpdate = array(
@@ -28,9 +28,9 @@ class CambiosController extends Controller {
         'Pagina' => 'integer',
         'Marca' => 'string',
         'ID' => 'integer',
-        'Numero' => 'float',
-        'Costo' => 'float',
-        'Precio' => 'float',
+        'Numero' => 'numeric',
+        'Costo' => 'numeric',
+        'Precio' => 'numeric',
         'IDREGVenta' => 'integer'
     );
     protected $validateDelete = array(

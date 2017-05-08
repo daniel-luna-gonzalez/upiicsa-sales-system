@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Marcas extends Model
 {
-    protected $table = "Ventas";
+    protected $table = "Marcas";
     public $timestamps = false;
     protected $primaryKey = "IDREG";
     protected $fillable = [
