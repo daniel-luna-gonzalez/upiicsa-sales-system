@@ -10,8 +10,7 @@ class Marcas extends Model
     public $timestamps = false;
     protected $primaryKey = "IDREG";
     protected $fillable = [
-        'Marca',
-        'IdMarca'
+        'Marca'
     ];
 
     /**

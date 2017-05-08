@@ -10,12 +10,10 @@ class MarcasController extends Controller {
 
     protected $validateNew = array(
         'Marca' => 'string',
-        'IdMarca' => 'integer|required|min:1',
     );
     protected $validateUpdate = array(
         "IDREG" => "integer|required|min:0",
          'Marca' => 'string',
-        'IdMarca' => 'integer|required|min:1',
     );
     protected $validateDelete = array(
         "IDREG" => "integer|required|min:1",
