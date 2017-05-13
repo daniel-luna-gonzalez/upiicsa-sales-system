@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\api\v1;
+
 use App\Catalogos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CatalogosController extends Controller
-{
+class CatalogosController extends Controller {
+
     protected $validateNew = array(
         'Catalogo' => 'string',
     );
@@ -19,7 +20,12 @@ class CatalogosController extends Controller
     );
 
     public function index() {
-        return Catalogos::all();
+        try {
+            $catalogos = Catalogos::all();
+            return $catalogos;
+        } catch (\Exception $e) {
+            return response()->json($e->getMessage());
+        }
     }
 
     public function create(Request $request) {
