@@ -22,8 +22,8 @@ class VentasController extends Controller {
 
     protected $validateNew = array(
         'Cliente' => 'string',
-        'idCliente' => 'integer|required|min:1',
-        'idCatalogo' => 'integer|required|min:1',
+        'IdCliente' => 'integer|required|min:1',
+        'IdCatalogo' => 'integer|required|min:1',
         'Catalogo' => 'string',
         'Pagina' => 'integer',
         'Marca' => 'string',
@@ -37,8 +37,8 @@ class VentasController extends Controller {
     
     protected $validateUpdate = array(
         "IDREG"    => "integer|required|min:0",
-        'idCliente' => 'integer|required|min:1',
-        'idCatalogo' => 'integer|required|min:1',
+        'IdCliente' => 'integer|required|min:1',
+        'IdCatalogo' => 'integer|required|min:1',
         'Catalogo' => 'string',
         'Pagina' => 'integer',
         'Marca' => 'string',

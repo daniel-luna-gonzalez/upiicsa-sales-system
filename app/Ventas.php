@@ -25,8 +25,8 @@ class Ventas extends Model
 
     protected $fillable = [
         'Cliente',
-        'idCliente',
-        'idCatalogo',
+        'IdCliente',
+        'IdCatalogo',
         'Catalogo',
         'Pagina',
         'Marca',
