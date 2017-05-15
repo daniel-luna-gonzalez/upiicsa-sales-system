@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Catalogos extends Model {
+class Catalogos extends Eloquent {
 
     protected $table = "Catalogos";
     public $timestamps = false;

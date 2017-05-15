@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api\v1;
 use App\Catalogos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use MongoDB\Client as Mongo;
 
 class CatalogosController extends Controller {
 
@@ -19,10 +20,20 @@ class CatalogosController extends Controller {
         "IDREG" => "integer|required|min:1",
     );
 
+    private function connection() {
+        $m = new \MongoClient(env("DB_HOST"));
+        $db = $m->sales;
+        return $collection = $db->catalogos;
+    }
+
     public function index() {
         try {
-            $catalogos = Catalogos::all();
-            return $catalogos;
+            
+            $collection = $this->connection();
+            $cursor = $collection->find();
+            $jokesArray = iterator_to_array($cursor);
+
+            return $jokesArray;
         } catch (\Exception $e) {
             return response()->json($e->getMessage());
         }
@@ -32,8 +43,10 @@ class CatalogosController extends Controller {
         try {
             if (!($validate = $this->validateRequest($request, $this->validateNew)))
                 return $validate;
-
-            return Catalogos::create($request->all());
+            
+            $collection = $this->connection();
+            
+            return $collection->insert($request->all());
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }
