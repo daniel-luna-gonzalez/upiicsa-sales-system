@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Cambios extends Model {
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+class Cambios extends Eloquent {
 
     protected $table = "Cambios";
     public $timestamps = false;

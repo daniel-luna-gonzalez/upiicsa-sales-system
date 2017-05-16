@@ -24,7 +24,7 @@ class MarcasController extends Controller {
     }
 
     public function create(Request $request) {
-        try {
+        try { 
             if (!($validate = $this->validateRequest($request, $this->validateNew)))
                 return $validate;
 

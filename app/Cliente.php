@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Cliente extends Model
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+class Cliente extends Eloquent
 {
     protected $table = "Clientes";
     

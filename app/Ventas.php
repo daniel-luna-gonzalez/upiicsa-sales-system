@@ -14,8 +14,8 @@ namespace App;
  * @author daniel
  */
 use Illuminate\Database\Eloquent\Model;
-
-class Ventas extends Model
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+class Ventas extends Eloquent
 {
     protected $table = "Ventas";
     

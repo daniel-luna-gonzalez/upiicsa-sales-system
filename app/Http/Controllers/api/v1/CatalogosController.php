@@ -28,7 +28,7 @@ class CatalogosController extends Controller {
 
     public function index() {
         try {
-            
+            return Catalogos::all();
             $collection = $this->connection();
             $cursor = $collection->find();
             $jokesArray = iterator_to_array($cursor);
