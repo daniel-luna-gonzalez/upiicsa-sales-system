@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -32,8 +34,29 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+//    public function __construct()
+//    {
+//        $this->middleware('guest')->except('logout');
+//    }
+    
+    
+    protected function validator(array $data)
     {
-        $this->middleware('guest')->except('logout');
+        return Validator::make($data, [
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:6',
+        ]);
+    }
+    
+    public function login(Request $request){
+        if(!($validation = $this->validator($request->all())))
+                return $validation;
+        
+        if(Auth::attemp($request)){
+            return response()->json(["status" => true, "message" => "Bienvenido ".$request->input("email")]);
+        }
+        else{
+            return response()->json(["status" => false, "message" => "Acceso denegado"]);
+        }
     }
 }
