@@ -49,5 +49,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::match(['get', 'post'], 'catalogos/eliminar/', "api\\v1\CatalogosController@eliminar");
     Route::match(['get', 'post'], 'catalogos/actualizar', "api\\v1\CatalogosController@actualizar");
     
+    Route::match(['get', 'post'], 'usuarios/nuevo', "Auth\RegisterController@create");
+    
 });
 
