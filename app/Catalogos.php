@@ -8,7 +8,7 @@ class Catalogos extends Eloquent {
 
     protected $table = "Catalogos";
     public $timestamps = false;
-    protected $primaryKey = "IDREG";
+    protected $primaryKey = "_id";
     protected $fillable = [
         'Catalogo',
     ];

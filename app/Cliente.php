@@ -9,7 +9,7 @@ class Cliente extends Eloquent
     protected $table = "Clientes";
     
     public $timestamps = false;
-    protected $primaryKey = "IDREG";
+    protected $primaryKey = "_id";
 
 
     protected $fillable = [

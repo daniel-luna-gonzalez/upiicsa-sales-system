@@ -21,7 +21,7 @@ class CambiosController extends Controller {
         'IDREGVenta' => 'integer'
     );
     protected $validateUpdate = array(
-        "IDREG" => "integer|required|min:0",
+        "_id" => "string|required",
         'Cliente' => 'string',
         'IdCliente' => 'integer',
         'Catalogo' => 'string',
@@ -34,7 +34,7 @@ class CambiosController extends Controller {
         'IDREGVenta' => 'integer'
     );
     protected $validateDelete = array(
-        "IDREG" => "integer|required|min:1",
+        "_id" => "integer|required",
     );
 
     public function index() {
@@ -57,7 +57,7 @@ class CambiosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
 
-            $cambios = Cambios::find($request->get("IDREG"));
+            $cambios = Cambios::find($request->get("_id"));
 
             if (!count($cambios) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró el cambio a actualizar"]);
@@ -75,7 +75,7 @@ class CambiosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $cambio = Cambios::find($request->get("IDREG"));
+            $cambio = Cambios::find($request->get("_id"));
 
             if (!count($cambio) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró el cambio a eliminar"]);

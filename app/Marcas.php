@@ -8,7 +8,7 @@ class Marcas extends Eloquent
 {
     protected $table = "Marcas";
     public $timestamps = false;
-    protected $primaryKey = "IDREG";
+    protected $primaryKey = "_id";
     protected $fillable = [
         'Marca'
     ];

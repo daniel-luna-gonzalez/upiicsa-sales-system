@@ -18,7 +18,7 @@ class PagosController extends Controller {
         'Anio' => 'integer'
     );
     protected $validateUpdate = array(
-        "IDREG" => "integer|required|min:0",
+        "_id" => "integer|required",
          'Cliente' => 'string',
         'IdCliente' => 'integer',
         'Fecha' => 'date',
@@ -28,7 +28,7 @@ class PagosController extends Controller {
         'Anio' => 'integer'
     );
     protected $validateDelete = array(
-        "IDREG" => "integer|required|min:1",
+        "_id" => "integer|required",
     );
 
     public function index() {

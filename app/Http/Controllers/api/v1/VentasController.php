@@ -36,7 +36,7 @@ class VentasController extends Controller {
     );
     
     protected $validateUpdate = array(
-        "IDREG"    => "integer|required|min:0",
+        "_id"    => "integer|required",
         'IdCliente' => 'integer|required|min:1',
         'IdCatalogo' => 'integer|required|min:1',
         'Catalogo' => 'string',
@@ -50,7 +50,7 @@ class VentasController extends Controller {
     );
     
     protected $validateDelete = array(
-        "IDREG" => "integer|required|min:1",
+        "_id" => "integer|required",
     );
     
     
@@ -75,7 +75,7 @@ class VentasController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
 
-            $venta = Ventas::find($request->get("IDREG"));
+            $venta = Ventas::find($request->get("_id"));
             
             if(!count($venta) > 0)
                 return response ()->json (["status" => false, "message" => "No se encontró la venta a actualizar"]);
@@ -93,7 +93,7 @@ class VentasController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $venta = Ventas::find($request->get("IDREG"));
+            $venta = Ventas::find($request->get("_id"));
             
             if(!count($venta) > 0)
                 return response ()->json (["status" => false, "message" => "No se encontró la venta a eliminar"]);

@@ -8,7 +8,7 @@ class Pagos extends Eloquent {
 
     protected $table = "Pagos";
     public $timestamps = false;
-    protected $primaryKey = "IDREG";
+    protected $primaryKey = "_id";
     protected $fillable = [
         'Cliente',
         'IdCliente',

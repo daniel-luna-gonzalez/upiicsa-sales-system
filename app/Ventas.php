@@ -20,7 +20,7 @@ class Ventas extends Eloquent
     protected $table = "Ventas";
     
     public $timestamps = false;
-    protected $primaryKey = "IDREG";
+    protected $primaryKey = "_id";
 
 
     protected $fillable = [

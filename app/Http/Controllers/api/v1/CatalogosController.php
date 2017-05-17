@@ -13,11 +13,11 @@ class CatalogosController extends Controller {
         'Catalogo' => 'string',
     );
     protected $validateUpdate = array(
-        "IDREG" => "integer|required|min:0",
+        "_id" => "string|required",
         'Catalogo' => 'string',
     );
     protected $validateDelete = array(
-        "IDREG" => "integer|required|min:1",
+        "_id" => "string|required",
     );
 
     private function connection() {
@@ -57,7 +57,7 @@ class CatalogosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
 
-            $catalogo = Catalogos::find($request->get("IDREG"));
+            $catalogo = Catalogos::find($request->get("_id"));
 
             if (!count($catalogo) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró el catálogo a actualizar"]);
@@ -75,7 +75,7 @@ class CatalogosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $catalogo = Catalogos::find($request->get("IDREG"));
+            $catalogo = Catalogos::find($request->get("_id"));
 
             if (!count($catalogo) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró el catálogo a eliminar"]);

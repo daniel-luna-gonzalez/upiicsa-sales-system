@@ -17,7 +17,7 @@ class ClientesController extends Controller {
     );
     
     protected $validateUpdate = array(
-        "IDREG"    => "integer|required|min:0",
+        "_id"    => "string|required",
         "Nombre" => "string|",
         "ApellidoPaterno" => "string|",
         "ApellidoMaterno" => "string",
@@ -26,7 +26,7 @@ class ClientesController extends Controller {
     );
     
     protected $validateDelete = array(
-        "IDREG" => "integer|required|min:1",
+        "_id" => "string|required",
     );
     
     public function index() {
@@ -49,7 +49,7 @@ class ClientesController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
             
-            $cliente = Cliente::find($request->get("IDREG"));
+            $cliente = Cliente::find($request->get("_id"));
                  
             if(!count($cliente) > 0)
                 return response ()->json (["status" => false, "message" => "No se encontró el cliente a actualizar"]);
@@ -67,7 +67,7 @@ class ClientesController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $cliente = Cliente::find($request->get("IDREG"));
+            $cliente = Cliente::find($request->get("_id"));
             if(!count($cliente) > 0)
                 return response ()->json (["status" => false, "message" => "No se encontró el cliente a eliminar"]);
             

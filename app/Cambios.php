@@ -8,7 +8,7 @@ class Cambios extends Eloquent {
 
     protected $table = "Cambios";
     public $timestamps = false;
-    protected $primaryKey = "IDREG";
+    protected $primaryKey = "_id";
     protected $fillable = [
         'Cliente',
         'IdCliente',

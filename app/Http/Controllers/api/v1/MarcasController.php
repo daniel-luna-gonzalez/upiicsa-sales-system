@@ -12,11 +12,11 @@ class MarcasController extends Controller {
         'Marca' => 'string',
     );
     protected $validateUpdate = array(
-        "IDREG" => "integer|required|min:0",
+        "_id" => "string|required|min:0",
          'Marca' => 'string',
     );
     protected $validateDelete = array(
-        "IDREG" => "integer|required|min:1",
+        "_id" => "string|required|min:1",
     );
 
     public function index() {
@@ -39,7 +39,7 @@ class MarcasController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
 
-            $marca = Marcas::find($request->get("IDREG"));
+            $marca = Marcas::find($request->get("_id"));
 
             if (!count($marca) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró la marca a actualizar"]);
@@ -57,7 +57,7 @@ class MarcasController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $marca = Marcas::find($request->get("IDREG"));
+            $marca = Marcas::find($request->get("_id"));
 
             if (!count($marca) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró la marca a eliminar"]);
