@@ -15,37 +15,29 @@ namespace App;
  */
 use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-class Ventas extends Eloquent
-{
+
+class Ventas extends Eloquent {
+
     protected $table = "Ventas";
-    
     public $timestamps = false;
     protected $primaryKey = "_id";
-
-
     protected $fillable = [
-        'Cliente',
-        'IdCliente',
-        'IdCatalogo',
-        'Catalogo',
-        'Pagina',
-        'Marca',
-        'ID',
-        'Numero',
-        'Costo',
-        'Precio',
-        'Entregado',
-        'Ubicacion'
-        ];
-    
+        "IdCliente",
+        "IdCatalogo",
+        "Pagina",
+        "IdMarca",
+        "ID",
+        "Numero",
+        "Costo",
+        "Precio",
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        
     ];
-    
-}
 
+}
