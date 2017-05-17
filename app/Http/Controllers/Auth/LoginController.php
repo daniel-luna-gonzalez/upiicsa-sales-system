@@ -53,7 +53,7 @@ class LoginController extends Controller
         if(!($validation = $this->validator($request->all())))
                 return $validation;
         
-        if(Auth::attempt($request)){
+        if(Auth::attempt(['email' => $request->input("email"), 'password' => $request->input("password")])){
             return response()->json(["status" => true, "message" => "Bienvenido ".$request->input("email")]);
         }
         else{
