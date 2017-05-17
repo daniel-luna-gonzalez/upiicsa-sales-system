@@ -63,6 +63,13 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         $data = $request->all();
+        
+        if(!($validation = $this->validator($data)))
+                return $validation;
+        
+        if(User::where("email", $data["email"])->first() != NULL)
+                return response ()->json (["El email " . $data["email"] ." ya esta en uso "]);
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
