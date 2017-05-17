@@ -33,9 +33,7 @@ class CatalogosController extends Controller {
         try {
             if (!($validate = $this->validateRequest($request, $this->validateNew)))
                 return $validate;
-            
-            $collection = $this->connection();
-            
+                        
             return Catalogos::create($request->all());
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
