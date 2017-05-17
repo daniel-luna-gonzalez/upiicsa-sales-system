@@ -10,16 +10,16 @@ class Cambios extends Eloquent {
     public $timestamps = false;
     protected $primaryKey = "_id";
     protected $fillable = [
-        'Cliente',
-        'IdCliente',
-        'Catalogo',
-        'Pagina',
-        'Marca',
-        'ID',
-        'Numero',
-        'Costo',
-        'Precio',
-        'IDREGVenta'
+        'cliente',
+        'idCliente',
+        'catalogo',
+        'pagina',
+        'marca',
+        'id',
+        'numero',
+        'costo',
+        'precio',
+        'idRegVenta'
     ];
 
     /**

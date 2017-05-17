@@ -13,11 +13,11 @@ class Cliente extends Eloquent
 
 
     protected $fillable = [
-        'Nombre',
-        'ApellidoPaterno',
-        'ApellidoMaterno',
-        'Direccion',
-        'Telefono'
+        'nombre',
+        'apellidoPaterno',
+        'apellidoMaterno',
+        'direccion',
+        'telefono'
         ];
     
     /**

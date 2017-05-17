@@ -10,7 +10,7 @@ class Catalogos extends Eloquent {
     public $timestamps = false;
     protected $primaryKey = "_id";
     protected $fillable = [
-        'Catalogo',
+        'catalogo',
     ];
 
     /**

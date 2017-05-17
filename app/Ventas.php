@@ -22,14 +22,14 @@ class Ventas extends Eloquent {
     public $timestamps = false;
     protected $primaryKey = "_id";
     protected $fillable = [
-        "IdCliente",
-        "IdCatalogo",
-        "Pagina",
-        "IdMarca",
-        "ID",
-        "Numero",
-        "Costo",
-        "Precio",
+        "idCliente",
+        "idCatalogo",
+        "pagina",
+        "idMarca",
+        "id",
+        "numero",
+        "costo",
+        "precio",
     ];
 
     /**

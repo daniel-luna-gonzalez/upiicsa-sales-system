@@ -10,7 +10,7 @@ class Marcas extends Eloquent
     public $timestamps = false;
     protected $primaryKey = "_id";
     protected $fillable = [
-        'Marca'
+        'marca'
     ];
 
     /**
