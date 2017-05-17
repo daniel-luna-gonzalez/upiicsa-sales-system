@@ -50,6 +50,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::match(['get', 'post'], 'catalogos/actualizar', "api\\v1\CatalogosController@actualizar");
     
     Route::match(['get', 'post'], 'usuarios/nuevo', "Auth\RegisterController@create");
-    
+    Route::match(['get', 'post'], 'login', "Auth\RegisterController@create");
 });
 
