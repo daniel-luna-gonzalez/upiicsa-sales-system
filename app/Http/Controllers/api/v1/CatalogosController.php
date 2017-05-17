@@ -20,20 +20,10 @@ class CatalogosController extends Controller {
         "_id" => "string|required",
     );
 
-    private function connection() {
-        $m = new \MongoClient(env("DB_HOST"));
-        $db = $m->sales;
-        return $collection = $db->catalogos;
-    }
-
     public function index() {
         try {
             return Catalogos::all();
-            $collection = $this->connection();
-            $cursor = $collection->find();
-            $jokesArray = iterator_to_array($cursor);
-
-            return $jokesArray;
+            
         } catch (\Exception $e) {
             return response()->json($e->getMessage());
         }
@@ -46,7 +36,7 @@ class CatalogosController extends Controller {
             
             $collection = $this->connection();
             
-            return $collection->insert($request->all());
+            return Catalogos::create($request->all());
         } catch (\Exception $e) {
             return response()->json(["status" => false, "message" => $e->getMessage()]);
         }
