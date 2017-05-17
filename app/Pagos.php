@@ -10,13 +10,10 @@ class Pagos extends Eloquent {
     public $timestamps = false;
     protected $primaryKey = "_id";
     protected $fillable = [
-        'Cliente',
-        'IdCliente',
-        'Fecha',
-        'Monto',
-        'Dia',
-        'Mes',
-        'Anio'
+        'idCliente',
+        'marca',
+        'fecha',
+        'monto',
     ];
 
     /**
