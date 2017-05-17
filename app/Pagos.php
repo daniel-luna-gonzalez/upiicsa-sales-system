@@ -11,7 +11,6 @@ class Pagos extends Eloquent {
     protected $primaryKey = "_id";
     protected $fillable = [
         'idCliente',
-        'marca',
         'fecha',
         'monto',
     ];
