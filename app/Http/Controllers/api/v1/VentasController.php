@@ -36,7 +36,7 @@ class VentasController extends Controller {
     );
     
     protected $validateUpdate = array(
-        "_id"    => "integer|required",
+        "_id"    => "string|required",
         'cliente' => 'string',
         'idCliente' => 'string|required|min:1',
         'idCatalogo' => 'string|required|min:1',
@@ -52,7 +52,7 @@ class VentasController extends Controller {
     );
     
     protected $validateDelete = array(
-        "_id" => "integer|required",
+        "_id" => "string|required",
     );
     
     

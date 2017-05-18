@@ -15,14 +15,14 @@ class PagosController extends Controller {
         'monto' => 'numeric'
     );
     protected $validateUpdate = array(
-        "_id" => "integer|required",
+        "_id" => "string|required",
         'cliente' => 'string',
         'idCliente' => 'string',
         'fecha' => 'date',
         'monto' => 'numeric'
     );
     protected $validateDelete = array(
-        "_id" => "integer|required",
+        "_id" => "string|required",
     );
 
     public function index() {
