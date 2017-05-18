@@ -21,32 +21,34 @@ use App\Http\Controllers\Controller;
 class VentasController extends Controller {
 
     protected $validateNew = array(
-        'Cliente' => 'string',
-        'IdCliente' => 'integer|required|min:1',
-        'IdCatalogo' => 'integer|required|min:1',
-        'Catalogo' => 'string',
-        'Pagina' => 'integer',
-        'Marca' => 'string',
-        'ID' => 'integer|required',
-        'Numero' => 'numeric',
-        'Costo' => 'integer',
-        'Precio' => 'numeric',
-        'Entregado' => 'integer',
-        'Ubicacion' => 'string'
+        'cliente' => 'string',
+        'idCliente' => 'integer|required|min:1',
+        'idCatalogo' => 'integer|required|min:1',
+        'catalogo' => 'string',
+        'pagina' => 'integer',
+        'marca' => 'string',
+        'id' => 'integer|required',
+        'numero' => 'numeric',
+        'costo' => 'integer',
+        'precio' => 'numeric',
+        'entregado' => 'integer',
+        'ubicacion' => 'string'
     );
     
     protected $validateUpdate = array(
         "_id"    => "integer|required",
-        'IdCliente' => 'integer|required|min:1',
-        'IdCatalogo' => 'integer|required|min:1',
-        'Catalogo' => 'string',
-        'Pagina' => 'integer',
-        'Marca' => 'string',
-        'Numero' => 'numeric',
-        'Costo' => 'integer',
-        'Precio' => 'numeric',
-        'Entregado' => 'integer',
-        'Ubicacion' => 'string'
+        'cliente' => 'string',
+        'idCliente' => 'integer|required|min:1',
+        'idCatalogo' => 'integer|required|min:1',
+        'catalogo' => 'string',
+        'pagina' => 'integer',
+        'marca' => 'string',
+        'id' => 'integer|required',
+        'numero' => 'numeric',
+        'costo' => 'integer',
+        'precio' => 'numeric',
+        'entregado' => 'integer',
+        'ubicacion' => 'string'
     );
     
     protected $validateDelete = array(

@@ -9,11 +9,11 @@ use App\Http\Controllers\Controller;
 class MarcasController extends Controller {
 
     protected $validateNew = array(
-        'Marca' => 'string',
+        'marca' => 'string',
     );
     protected $validateUpdate = array(
         "_id" => "string|required|min:0",
-         'Marca' => 'string',
+         'marca' => 'string',
     );
     protected $validateDelete = array(
         "_id" => "string|required|min:1",

@@ -9,23 +9,17 @@ use App\Http\Controllers\Controller;
 class PagosController extends Controller {
 
     protected $validateNew = array(
-        'Cliente' => 'string',
-        'IdCliente' => 'integer',
-        'Fecha' => 'date',
-        'Monto' => 'numeric',
-        'Dia' => 'integer',
-        'Mes' => 'integer',
-        'Anio' => 'integer'
+        'cliente' => 'string',
+        'idCliente' => 'integer',
+        'fecha' => 'date',
+        'monto' => 'numeric'
     );
     protected $validateUpdate = array(
         "_id" => "integer|required",
-         'Cliente' => 'string',
-        'IdCliente' => 'integer',
-        'Fecha' => 'date',
-        'Monto' => 'numeric',
-        'Dia' => 'integer',
-        'Mes' => 'integer',
-        'Anio' => 'integer'
+        'cliente' => 'string',
+        'idCliente' => 'integer',
+        'fecha' => 'date',
+        'monto' => 'numeric'
     );
     protected $validateDelete = array(
         "_id" => "integer|required",

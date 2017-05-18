@@ -9,29 +9,29 @@ use App\Http\Controllers\Controller;
 class CambiosController extends Controller {
 
     protected $validateNew = array(
-        'Cliente' => 'string',
-        'IdCliente' => 'integer',
-        'Catalogo' => 'string',
-        'Pagina' => 'integer',
-        'Marca' => 'string',
-        'ID' => 'integer',
-        'Numero' => 'numeric',
-        'Costo' => 'numeric',
+        'cliente' => 'string',
+        'idCliente' => 'integer',
+        'catalogo' => 'string',
+        'pagina' => 'integer',
+        'marca' => 'string',
+        'id' => 'integer',
+        'numero' => 'numeric',
+        'costo' => 'numeric',
         'Precio' => 'numeric',
-        'IDREGVenta' => 'integer'
+        'idRegVenta' => 'integer'
     );
     protected $validateUpdate = array(
         "_id" => "string|required",
-        'Cliente' => 'string',
-        'IdCliente' => 'integer',
-        'Catalogo' => 'string',
-        'Pagina' => 'integer',
-        'Marca' => 'string',
-        'ID' => 'integer',
-        'Numero' => 'numeric',
-        'Costo' => 'numeric',
+         'cliente' => 'string',
+        'idCliente' => 'integer',
+        'catalogo' => 'string',
+        'pagina' => 'integer',
+        'marca' => 'string',
+        'id' => 'integer',
+        'numero' => 'numeric',
+        'costo' => 'numeric',
         'Precio' => 'numeric',
-        'IDREGVenta' => 'integer'
+        'idRegVenta' => 'integer'
     );
     protected $validateDelete = array(
         "_id" => "integer|required",

@@ -10,11 +10,11 @@ use MongoDB\Client as Mongo;
 class CatalogosController extends Controller {
 
     protected $validateNew = array(
-        'Catalogo' => 'string',
+        'catalogo' => 'string',
     );
     protected $validateUpdate = array(
         "_id" => "string|required",
-        'Catalogo' => 'string',
+        'catalogo' => 'string',
     );
     protected $validateDelete = array(
         "_id" => "string|required",
