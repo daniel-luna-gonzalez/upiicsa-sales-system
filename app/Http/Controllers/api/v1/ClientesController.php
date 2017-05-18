@@ -9,20 +9,20 @@ use App\Http\Controllers\Controller;
 class ClientesController extends Controller {
 
     protected $validateNew = array(
-        "Nombre" => "string|required",
-        "ApellidoPaterno" => "string|required",
-        "ApellidoMaterno" => "string",
-        "Direccion" => "string",
-        "Telefono" => "string",
+        "nombre" => "string|required",
+        "apellidoPaterno" => "string|required",
+        "apellidoMaterno" => "string",
+        "direccion" => "string",
+        "telefono" => "string",
     );
     
     protected $validateUpdate = array(
         "_id"    => "string|required",
-        "Nombre" => "string|",
-        "ApellidoPaterno" => "string|",
-        "ApellidoMaterno" => "string",
-        "Direccion" => "string",
-        "Telefono" => "string",
+        "nombre" => "string|",
+        "apellidoPaterno" => "string|",
+        "apellidoMaterno" => "string",
+        "direccion" => "string",
+        "telefono" => "string",
     );
     
     protected $validateDelete = array(
