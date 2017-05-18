@@ -45,7 +45,7 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateUpdate)))
                 return $validate;
 
-            $pago = Pagos::find($request->get("IDREG"));
+            $pago = Pagos::find($request->get("_id"));
 
             if (!count($pago) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró el pago a actualizar"]);
@@ -63,7 +63,7 @@ class PagosController extends Controller {
             if (!($validate = $this->validateRequest($request, $this->validateDelete)))
                 return $validate;
 
-            $pago = Pagos::find($request->get("IDREG"));
+            $pago = Pagos::find($request->get("_id"));
 
             if (!count($pago) > 0)
                 return response()->json(["status" => false, "message" => "No se encontró el pago a eliminar"]);
