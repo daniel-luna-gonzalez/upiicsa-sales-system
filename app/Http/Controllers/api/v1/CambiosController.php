@@ -14,24 +14,24 @@ class CambiosController extends Controller {
         'catalogo' => 'string',
         'pagina' => 'integer',
         'marca' => 'string',
-        'id' => 'integer',
+        'id' => 'string',
         'numero' => 'numeric',
         'costo' => 'numeric',
         'Precio' => 'numeric',
-        'idRegVenta' => 'integer'
+        'idRegVenta' => 'string'
     );
     protected $validateUpdate = array(
         "_id" => "string|required",
          'cliente' => 'string',
-        'idCliente' => 'integer',
+        'idCliente' => 'string',
         'catalogo' => 'string',
         'pagina' => 'integer',
         'marca' => 'string',
-        'id' => 'integer',
+        'id' => 'string',
         'numero' => 'numeric',
         'costo' => 'numeric',
         'Precio' => 'numeric',
-        'idRegVenta' => 'integer'
+        'idRegVenta' => 'string'
     );
     protected $validateDelete = array(
         "_id" => "integer|required",
