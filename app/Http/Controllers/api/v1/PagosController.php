@@ -10,14 +10,14 @@ class PagosController extends Controller {
 
     protected $validateNew = array(
         'cliente' => 'string',
-        'idCliente' => 'integer',
+        'idCliente' => 'string',
         'fecha' => 'date',
         'monto' => 'numeric'
     );
     protected $validateUpdate = array(
         "_id" => "integer|required",
         'cliente' => 'string',
-        'idCliente' => 'integer',
+        'idCliente' => 'string',
         'fecha' => 'date',
         'monto' => 'numeric'
     );
